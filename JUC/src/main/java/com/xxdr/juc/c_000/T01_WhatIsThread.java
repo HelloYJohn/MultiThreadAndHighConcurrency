@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName WhatIsThread
- * @Description TODO
+ * @Description 线程可以简单说是一个程序里不同的执行路径
  * @Author John Yuan
  * @Date 4/9/21 1:52 PM
  * @Version 1.0

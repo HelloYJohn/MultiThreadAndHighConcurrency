@@ -9,5 +9,10 @@
         <module name="JUC" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="NewThread" target="8" />
+      <module name="ReferenceType" target="8" />
+      <module name="SleepYieldJoin" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

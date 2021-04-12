@@ -1,0 +1,16 @@
+synchronized(object)
+
+1. mark word(偏向锁)
+2. 自旋锁
+3. 重量级锁
+
+执行时间短（加锁代码），线程数少，用自旋
+执行时间长，线程数多，用系统锁
+
+线程的概念、启动方式、常用方法
+synchronized(Object)不能用String常量、Integer、Long
+线程同步
+    锁的是对象不是代码
+    this XX.class
+    锁定方法 分锁定方法 同时执行
+    锁升级
