@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @ClassName T02_ReentrantLock2
- * @Description TODO
+ * @Description ReentrantLock replaces Synchronized
  * @Author John Yuan
  * @Date 4/15/21 11:02 AM
  * @Version 1.0

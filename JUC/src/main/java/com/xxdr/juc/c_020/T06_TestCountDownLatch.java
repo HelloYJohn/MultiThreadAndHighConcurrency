@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @ClassName T06_TestCountDownLatch
- * @Description TODO
+ * @Description CountDownLatch and Join
  * @Author John Yuan
  * @Date 4/15/21 5:10 PM
  * @Version 1.0

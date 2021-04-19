@@ -1,11 +1,7 @@
-package com.xxdr.juc.c_020.c_20_01_interview;
+package com.xxdr.juc.c_020_01_interview;
 
-import sun.awt.image.ImageWatched;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Author John Yuan

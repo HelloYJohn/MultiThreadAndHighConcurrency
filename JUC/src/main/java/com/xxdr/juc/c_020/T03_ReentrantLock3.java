@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @ClassName T03_ReentrantLock3
- * @Description trylock
+ * @Description ReentrantLock.trylock
  * @Author John Yuan
  * @Date 4/15/21 11:08 AM
  * @Version 1.0

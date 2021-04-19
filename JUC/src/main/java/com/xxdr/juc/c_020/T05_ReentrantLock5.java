@@ -4,7 +4,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @ClassName T05_ReentrantLock5
- * @Description TODO
+ * @Description fair lock
  * @Author John Yuan
  * @Date 4/15/21 1:50 PM
  * @Version 1.0

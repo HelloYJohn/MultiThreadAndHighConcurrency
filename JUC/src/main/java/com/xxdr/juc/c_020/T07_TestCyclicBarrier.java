@@ -5,7 +5,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * @ClassName T07_TestCyclicBarrier
- * @Description TODO
+ * @Description CyclicBarrier
  * @Author John Yuan
  * @Date 4/15/21 5:27 PM
  * @Version 1.0

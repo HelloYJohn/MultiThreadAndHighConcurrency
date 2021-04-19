@@ -1,4 +1,4 @@
-package com.xxdr.juc.c_020.c_20_01_interview;
+package com.xxdr.juc.c_020_01_interview;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName T08_TestPhaser
- * @Description TODO
+ * @Description Phaser
  * @Author John Yuan
  * @Date 4/15/21 5:58 PM
  * @Version 1.0

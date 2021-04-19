@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @ClassName T04_ReentrantLock04
- * @Description TODO
+ * @Description reentrantlock.lockInterruptibly
  * @Author John Yuan
  * @Date 4/15/21 11:16 AM
  * @Version 1.0
