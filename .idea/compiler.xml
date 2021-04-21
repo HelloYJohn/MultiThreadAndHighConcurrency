@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JUC" />
+        <module name="TestJDK1_9" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
