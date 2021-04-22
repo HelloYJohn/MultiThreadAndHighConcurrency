@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JUC" />
+        <module name="TestVarHandle" />
         <module name="TestJDK1_9" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="NewThread" target="8" />
-      <module name="ReferenceType" target="8" />
-      <module name="SleepYieldJoin" target="8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
