@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @Author John Yuan
- * @Description //TODO
+ * @Description 写时复制
  * @Date 2021/4/21 23:27
  * @Version 1.0
  */

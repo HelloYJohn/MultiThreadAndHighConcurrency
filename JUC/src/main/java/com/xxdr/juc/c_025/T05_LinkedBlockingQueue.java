@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Author John Yuan
- * @Description //TODO
+ * @Description 无界阻塞队列
  * @Date 2021/4/21 23:39
  * @Version 1.0
  */

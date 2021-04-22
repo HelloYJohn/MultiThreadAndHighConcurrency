@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Author John Yuan
- * @Description //TODO
+ * @Description Vector自带锁
  * @Date 2021/4/21 22:43
  * @Version 1.0
  */

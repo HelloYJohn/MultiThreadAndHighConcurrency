@@ -7,7 +7,7 @@ import java.util.UUID;
 
 /**
  * @Author John Yuan
- * @Description //TODO
+ * @Description HashTable自带锁
  * @Date 2021/4/21 21:29
  * @Version 1.0
  */

@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @Author John Yuan
- * @Description //TODO
+ * @Description 给HashMap手动加锁，和HashTable效率上区别不大
  * @Date 2021/4/21 21:50
  * @Version 1.0
  */

@@ -5,7 +5,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * @Author John Yuan
- * @Description //TODO
+ * @Description BlockingQueue最大的优点是阻塞，提供了多线程友好的借口
+ * offer <-> add
+ * poll peek
  * @Date 2021/4/21 23:36
  * @Version 1.0
  */
