@@ -1,16 +1,17 @@
-package com.xxdr.juc;
+package com.xxdr.juc.c_022_RefTypeAndThreadLocal;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName ThreadLocal2
+ * @ClassName ThreadLocal1
  * @Description TODO
  * @Author John Yuan
- * @Date 4/21/21 6:04 PM
+ * @Date 4/21/21 5:47 PM
  * @Version 1.0
  */
-public class ThreadLocal2{
-    static ThreadLocal<Person> tl = new ThreadLocal<>();
+
+public class ThreadLocal1 {
+    volatile static Person p = new Person();
 
     public static void main(String[] args) {
         new Thread(() -> {
@@ -19,7 +20,7 @@ public class ThreadLocal2{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(tl.get());
+            System.out.println(p.name);
         }).start();
 
         new Thread(() -> {
@@ -28,9 +29,11 @@ public class ThreadLocal2{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            tl.set(new Person());
+            p.name = "lisi";
         }).start();
     }
 }
 
-
+class Person {
+    String name = "zhangsan";
+}

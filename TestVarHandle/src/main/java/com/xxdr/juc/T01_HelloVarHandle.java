@@ -33,6 +33,7 @@ public class T01_HelloVarHandle {
         System.out.println(t.x);
         handle.getAndAdd(t, 10);
         System.out.println(t.x);
+
     }
 
 }
