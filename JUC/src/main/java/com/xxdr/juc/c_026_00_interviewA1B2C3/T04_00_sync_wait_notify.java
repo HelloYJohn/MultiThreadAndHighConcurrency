@@ -1,28 +1,28 @@
 package com.xxdr.juc.c_026_00_interviewA1B2C3;
 
-import java.util.concurrent.CountDownLatch;
-
 /**
- * @ClassName T03_00_sync_wait_notify
- * @Description TODO
  * @Author John Yuan
- * @Date 4/23/21 5:55 PM
+ * @Description //TODO
+ * @Date 2021/4/23 21:58
  * @Version 1.0
  */
-public class T03_00_sync_wait_notify {
+public class T04_00_sync_wait_notify {
+    private static volatile boolean t2Start = false;
+
     public static void main(String[] args) {
         final Object o = new Object();
-        final CountDownLatch latch = new CountDownLatch(1);
         char[] numberChar = "1234567".toCharArray();
         char[] letterChar = "ABCDEFG".toCharArray();
 
         new Thread(() -> {
-            try {
-                latch.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             synchronized (o) {
+                while (!t2Start) {
+                    try {
+                        o.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 for (char c : numberChar) {
                     System.out.print(c);
                     o.notifyAll();
@@ -42,9 +42,9 @@ public class T03_00_sync_wait_notify {
 //            e.printStackTrace();
 //        }
         new Thread(() -> {
-            latch.countDown();
             synchronized (o) {
                 for (char c : letterChar) {
+                    t2Start = true;
                     System.out.print(c);
                     o.notifyAll();
                     try {

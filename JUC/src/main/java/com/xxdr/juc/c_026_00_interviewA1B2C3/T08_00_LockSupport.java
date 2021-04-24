@@ -10,7 +10,8 @@ import java.util.concurrent.locks.LockSupport;
  * @Version 1.0
  */
 public class T08_00_LockSupport {
-    private static Thread t1, t2;
+    private static Thread t1 = null, t2 = null;
+
     public static void main(String[] args) {
         char[] numberChar = "1234567".toCharArray();
         char[] letterChar = "ABCDEFG".toCharArray();
@@ -18,16 +19,16 @@ public class T08_00_LockSupport {
         t1 = new Thread(() -> {
             for (char c : letterChar) {
                 System.out.print(c);
-                LockSupport.unpark(t2);
-                LockSupport.park();
+                LockSupport.unpark(t2);   // 叫醒t2
+                LockSupport.park();    // t1阻塞
             }
         });
 
         t2 = new Thread(() -> {
             for (char c : numberChar) {
-                LockSupport.park();
+                LockSupport.park();   // 阻塞t2
                 System.out.print(c);
-                LockSupport.unpark(t1);
+                LockSupport.unpark(t1);  // 叫醒t1
             }
         });
 

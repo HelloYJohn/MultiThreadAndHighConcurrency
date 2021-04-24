@@ -18,18 +18,19 @@ public class T02_00_sync_wait_notify {
 
         new Thread(() -> {
             synchronized (o) {
-                for (char c : letterChar) {
+                for (char c : numberChar) {
                     System.out.print(c);
+                    o.notifyAll();
                     try {
                         o.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    o.notifyAll();
                 }
                 o.notifyAll();
             }
         }).start();
+
 //        try {
 //            TimeUnit.SECONDS.sleep(1);
 //        } catch (InterruptedException e) {
@@ -37,9 +38,9 @@ public class T02_00_sync_wait_notify {
 //        }
         new Thread(() -> {
             synchronized (o) {
-                for (char c : numberChar) {
-                    o.notifyAll();
+                for (char c : letterChar) {
                     System.out.print(c);
+                    o.notifyAll();
                     try {
                         o.wait();
                     } catch (InterruptedException e) {

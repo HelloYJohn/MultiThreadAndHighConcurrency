@@ -1,40 +1,41 @@
 package com.xxdr.juc.c_026_00_interviewA1B2C3;
 
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @ClassName T03_00_sync_wait_notify
- * @Description TODO
  * @Author John Yuan
- * @Date 4/23/21 5:55 PM
+ * @Description //TODO
+ * @Date 2021/4/23 22:06
  * @Version 1.0
  */
-public class T03_00_sync_wait_notify {
+public class T05_00_lock_condition {
+
     public static void main(String[] args) {
-        final Object o = new Object();
-        final CountDownLatch latch = new CountDownLatch(1);
+        Lock lock = new ReentrantLock();
+        Condition condition = lock.newCondition();
         char[] numberChar = "1234567".toCharArray();
         char[] letterChar = "ABCDEFG".toCharArray();
 
+
         new Thread(() -> {
             try {
-                latch.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            synchronized (o) {
+                lock.lock();
                 for (char c : numberChar) {
                     System.out.print(c);
-                    o.notifyAll();
+                    condition.signal();
                     try {
-                        o.wait();
+                        condition.await();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                o.notifyAll();
+                condition.signal();
+            } finally {
+                lock.unlock();
             }
-        }).start();
+        }, "t1").start();
 
 //        try {
 //            TimeUnit.SECONDS.sleep(1);
@@ -42,19 +43,21 @@ public class T03_00_sync_wait_notify {
 //            e.printStackTrace();
 //        }
         new Thread(() -> {
-            latch.countDown();
-            synchronized (o) {
+            try {
+                lock.lock();
                 for (char c : letterChar) {
                     System.out.print(c);
-                    o.notifyAll();
+                    condition.signal();
                     try {
-                        o.wait();
+                        condition.await();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                o.notifyAll();
+                condition.signal();
+            } finally {
+                lock.unlock();
             }
-        }).start();
+        }, "t2").start();
     }
 }

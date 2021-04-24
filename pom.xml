@@ -11,6 +11,8 @@
     <modules>
         <module>JUC</module>
         <module>TestVarHandle</module>
+        <module>TestJMH</module>
+        <module>TestDisruptor</module>
     </modules>
 
     <properties>
